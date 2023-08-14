@@ -32,6 +32,16 @@ export const bounceInRight = keyframes`
 const shakeY = keyframes`
   0% {
     opacity: 0;
+    transform: scale(0.1) translateY(-1000px) rotate(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(62deg);
+  }
+`;
+const shakeShadow = keyframes`
+  0% {
+    opacity: 0;
     transform: scale(0.1) translateY(-1000px);
   }
   100% {
@@ -39,33 +49,49 @@ const shakeY = keyframes`
     transform: scale(1) translateY(0);
   }
 `;
-
+export const Container = styled.div`
+  width: 1357px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+`;
+export const MainSection = styled.section`
+  background-color: #292929;
+  padding-bottom: 755px;
+  padding-top: 127px;
+  position: relative;
+`;
 export const DecorRound = styled.div`
   animation: ${bounceInRight} 1s both;
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: -199px;
   border-top-left-radius: 1382px;
+  border-top-right-radius: 1382px;
   background: #ffed4a;
-  width: 877px;
-  height: 800px;
+  width: 1400px;
+  height: 823px;
 `;
 export const ImgDecor = styled.img`
   animation: ${shakeY} 1s ease;
   width: 623.961px;
   height: 711.122px;
   position: absolute;
-  left: 152px;
+  right: 291px;
+  top: 18px;
+  transform: rotate(62deg);
 `;
 
 export const ShadowDecor = styled.div`
-  animation: ${shakeY} 1s ease;
+  animation: ${shakeShadow} 1s ease;
   border-radius: 671px;
   background: rgba(0, 0, 0, 0.6);
-  width: 671px;
-  height: 34.588px;
+  width: 387.788px;
+  height: 26.122px;
   filter: blur(27.670101165771484px);
   position: absolute;
-  left: 102px;
-  bottom: 131px;
+  right: 377px;
+  bottom: 97px;
 `;

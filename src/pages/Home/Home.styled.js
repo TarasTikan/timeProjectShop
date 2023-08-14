@@ -75,19 +75,22 @@ export const SpanText = styled.span`
 export const DecorRound = styled.div`
   animation: ${bounceInRight} 1s both;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 100px;
+  right: -350px;
   border-top-left-radius: 1382px;
+  border-top-right-radius: 1256px;
+  border-bottom-left-radius: 1097px;
   background: #ffed4a;
-  width: 877px;
-  height: 800px;
+  width: 1177px;
+  height: 1050px;
 `;
 export const ImgDecor = styled.img`
   animation: ${shakeY} 1s ease;
   width: 623.961px;
   height: 711.122px;
   position: absolute;
-  left: 152px;
+  left: 46px;
+  top: -20px;
 `;
 
 export const ShadowDecor = styled.div`
@@ -98,6 +101,6 @@ export const ShadowDecor = styled.div`
   height: 34.588px;
   filter: blur(27.670101165771484px);
   position: absolute;
-  left: 102px;
-  bottom: 131px;
+  left: 27px;
+  bottom: 415px;
 `;

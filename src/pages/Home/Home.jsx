@@ -1,8 +1,37 @@
-import { Container, DecorRound, ImgDecor, MainSection, MainText, ShadowDecor, SpanText } from "./Home.styled";
-import timeDecor from 'img/times-decor.png'
+import {
+  Container,
+  DecorRound,
+  ImgDecor,
+  MainSection,
+  MainText,
+  ShadowDecor,
+  SpanText,
+} from './Home.styled';
+import timeDecor from 'img/times-decor.png';
+import { motion } from 'framer-motion';
 export const Home = () => {
-    return (
-      <main>
+  const pageVariants = {
+    initial: { opacity: 0, x: '-100%' },
+    animate: {
+      opacity: 1,
+      x: '0%',
+      transition: { duration: 1, ease: 'easeOut' },
+    },
+    exit: {
+      opacity: 0,
+      x: '100%',
+      transition: { ease: 'backIn', duration: 0.8 },
+    },
+  };
+  return (
+    <div style={{ overflow: 'hidden', overflowX: 'hidden' }}>
+      <motion.main
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageVariants}
+        style={{ width: false ? '120%' : '100%' }}
+      >
         <MainSection>
           <Container>
             <MainText>
@@ -20,6 +49,7 @@ export const Home = () => {
             </DecorRound>
           </Container>
         </MainSection>
-      </main>
-    );
-}
+      </motion.main>
+    </div>
+  );
+};
