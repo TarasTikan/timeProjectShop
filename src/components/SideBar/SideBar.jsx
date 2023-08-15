@@ -11,7 +11,7 @@ export const SideBar = () => {
                   <StyledLink to="/">Головна</StyledLink>
                 </NavItem>
                 <NavItem>
-                  <StyledLink to="/contact">Контакти</StyledLink>
+                  <StyledLink to="/products">Продукти</StyledLink>
                 </NavItem>
                 <NavItem>
                   <TextLink>Про нас</TextLink>

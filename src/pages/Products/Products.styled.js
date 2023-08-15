@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import bgProducts from  '../../img/bgProducts.jpg'
 export const bounceInRight = keyframes`
   from, 20%, 40%, 60%, 80%, to {
     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -58,16 +59,22 @@ export const Container = styled.div`
   align-items: center;
 `;
 export const MainSection = styled.section`
+  background-image: url(${bgProducts});
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #292929;
-  padding-bottom: 755px;
+  padding-bottom: 120px;
   padding-top: 127px;
   position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 `;
 export const DecorRound = styled.div`
   animation: ${bounceInRight} 1s both;
   position: absolute;
-  bottom: 0;
-  left: -199px;
+  bottom: -100px;
+  right: 1000px;
   border-top-left-radius: 1382px;
   border-top-right-radius: 1382px;
   background: #ffed4a;
