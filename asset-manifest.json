@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/timeProjectShop/static/css/main.4f8b0c54.css",
-    "main.js": "/timeProjectShop/static/js/main.899ce51e.js",
+    "main.js": "/timeProjectShop/static/js/main.c1b30c0c.js",
     "static/media/times-decor.png": "/timeProjectShop/static/media/times-decor.56b6a00bb9ef5797479b.png",
     "static/media/bgProducts.jpg": "/timeProjectShop/static/media/bgProducts.8dcf98926d37ea03baa4.jpg",
     "index.html": "/timeProjectShop/index.html",
     "main.4f8b0c54.css.map": "/timeProjectShop/static/css/main.4f8b0c54.css.map",
-    "main.899ce51e.js.map": "/timeProjectShop/static/js/main.899ce51e.js.map"
+    "main.c1b30c0c.js.map": "/timeProjectShop/static/js/main.c1b30c0c.js.map"
   },
   "entrypoints": [
     "static/css/main.4f8b0c54.css",
-    "static/js/main.899ce51e.js"
+    "static/js/main.c1b30c0c.js"
   ]
 }
