@@ -1,48 +1,54 @@
-// import { Swiper} from 'swiper/react';
-// import { Virtual } from 'swiper/modules';
-// import { StyledSwiper, SwiperSlide } from './SlidesProducts.styled';
-
-// export const SlidesProducts = () => {
-//   const slides = Array.from({ length: 10 }).map(
-//     (el, index) => `Slide ${index + 1}`
-//   );
-//   return (
-//     <StyledSwiper modules={[Virtual]} spaceBetween={50} slidesPerView={3} virtual={true}>
-//       {slides.map((slideContent, index) => (
-//         <SwiperSlide key={slideContent} virtualIndex={index}>
-//           {slideContent}
-//         </SwiperSlide>
-//       ))}
-//     </StyledSwiper>
-//   );
-// };
-
-
 import { Autoplay, Virtual } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/virtual';
 import 'swiper/css/autoplay';
 import { StyledSwiper } from './SlidesProducts.styled';
-
+import { products } from '../../data.js';
+import { useEffect, useState } from 'react';
+import { fetchWatchImg } from 'api/fetchImgWatch';
+import { nanoid } from 'nanoid';
+import { SlideContent } from 'components/SlideContent/SlideContent';
 export const SlidesProducts = () => {
-  const slides = Array.from({ length: 1000 }).map(
-    (el, index) => `Slide ${index + 1}`
-  );
-
+  const [items, setItems] = useState();
+    const [flippedSlides, setFlippedSlides] = useState([]);
+useEffect(() => {
+  fetchWatchImg().then(item => {
+    const productsWithImages = products.map((product, index) => ({
+      ...product,
+      img: item.hits[index].webformatURL,
+    }));
+    setItems(productsWithImages);
+  });
+}, []);
+  const toggleFlip = slideIndex => {
+    if (flippedSlides.includes(slideIndex)) {
+      setFlippedSlides(flippedSlides.filter(index => index !== slideIndex));
+    } else {
+      setFlippedSlides([...flippedSlides, slideIndex]);
+    }
+  };
   return (
     <StyledSwiper
       modules={[Virtual, Autoplay]}
       spaceBetween={30}
       slidesPerView={3}
       virtual
-      autoplay={{ delay: 2000, disableOnInteraction: false }}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
     >
-      {slides.map((slideContent, index) => (
-        <SwiperSlide key={slideContent} virtualIndex={index}>
-          {slideContent}
-        </SwiperSlide>
-      ))}
+      {items === undefined ||
+        items.map((item, index) => (
+          <SwiperSlide
+            key={nanoid()}
+            virtualIndex={nanoid()}
+            onClick={() => toggleFlip(index)} // Додайте обробник події onClick
+          >
+            <SlideContent
+              flipped={flippedSlides.includes(index)} // Передайте стан перевернутості
+              item={item}
+            />
+          </SwiperSlide>
+        ))}
     </StyledSwiper>
   );
 };
