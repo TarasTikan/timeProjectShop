@@ -16,7 +16,7 @@ export const products = [
     ],
   },
   {
-    name: 'TAG Heuer Carrera Chronograph',
+    name: 'TAG Heuer Carrera',
     brand: 'TAG Heuer',
     model: 'Хронограф Carrera',
     price: 8500,
@@ -80,7 +80,7 @@ export const products = [
     features: ['Гесалітовий кристал', 'Гвинтова корона'],
   },
   {
-    name: 'Bulova Precisionist Chronograph',
+    name: 'Bulova Precisionist',
     brand: 'Bulova',
     model: 'Precisionist',
     price: 300,
@@ -128,7 +128,7 @@ export const products = [
     features: ['Сапфіровий кристал', 'Гвинтова корона'],
   },
   {
-    name: 'Hamilton Khaki Field Mechanical',
+    name: 'Hamilton Khaki Field',
     brand: 'Hamilton',
     model: 'Khaki Field Mechanical',
     price: 400,
@@ -188,7 +188,7 @@ export const products = [
     features: ['Сапфіровий кристал', 'Гвинтова корона'],
   },
   {
-    name: 'Breitling Avenger Chronograph',
+    name: 'Breitling Avenger',
     brand: 'Breitling',
     model: 'Avenger Chronograph',
     price: 5500,
@@ -236,7 +236,7 @@ export const products = [
     features: ['Сапфіровий кристал', 'Висувна корона'],
   },
   {
-    name: 'Zenith El Primero Chronograph',
+    name: 'Zenith El Primero',
     brand: 'Zenith',
     model: 'El Primero Chronograph',
     price: 6800,

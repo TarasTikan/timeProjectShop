@@ -3,30 +3,33 @@ import { BtnBasket, BtnCard, ImageWatch, PriceText, SlideContainer, TitileProduc
 import 'swiper/css';
 import 'swiper/css/virtual';
 import 'swiper/css/autoplay';
-export const SlideContent = ({ flipped, item }) => {
-  return (
-    <SlideContainer flipped={flipped}>
-      <WrapInfo>
-        {!flipped ? (
-          // Відображення інформації при переверненому слайді
-          <>
-      <ImageWatch src={item.img} alt="фото Часів" />
-            <TitileProducts>{item.name}</TitileProducts>
-            <WrapPrice>
-              <PriceText>{item.price} грн</PriceText>
-              <BtnBasket type="button">
-                <Basket />
-              </BtnBasket>
-            </WrapPrice>
-          </>
-        ) : (
-            <>
-
-            <BtnCard>Buy</BtnCard>
+import { ShopBascetIcon } from "icons/shopBascetIcon";
+export const SlideContent = ({ flipped, item, toggle }) => {
+  if (flipped) {
+    return (
+      <SlideContainer flipped={flipped}>
+        <WrapInfo>
+          <BtnCard onClick={toggle}>Buy</BtnCard>
           <h1>hello</h1>
+        </WrapInfo>
+      </SlideContainer>
+    );
+  }
 
-            </>
-        )}
+  return (
+    <SlideContainer>
+      <WrapInfo>
+        <ImageWatch src={item.img} alt="фото Часів" />
+        <TitileProducts>{item.name}</TitileProducts>
+        <WrapPrice>
+          <PriceText>{item.price} грн</PriceText>
+          <BtnBasket type="button">
+            <ShopBascetIcon />
+          </BtnBasket>
+          <BtnBasket type="button" onClick={toggle}>
+            і
+          </BtnBasket>
+        </WrapPrice>
       </WrapInfo>
     </SlideContainer>
   );
