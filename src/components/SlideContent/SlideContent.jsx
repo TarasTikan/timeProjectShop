@@ -1,4 +1,3 @@
-import { Basket } from "icons/basket";
 import { BtnBasket, BtnCard, ImageWatch, PriceText, SlideContainer, TitileProducts, WrapInfo, WrapPrice } from "./SlideContent.styled";
 import 'swiper/css';
 import 'swiper/css/virtual';
