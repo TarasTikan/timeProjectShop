@@ -4,7 +4,6 @@ export const ImageWatch = styled.img`
   height: 368px;
   border-radius: 42px;
   margin-bottom: auto;
-  border: 2px solid #ffed4a;
 `;
 
 export const TitileProducts = styled.h3`
@@ -18,6 +17,7 @@ export const TitileProducts = styled.h3`
   text-align: center;
   margin-top: 10px;
   margin-right: 34px;
+  
 `;
 export const WrapTitle = styled.div`
   display: flex;
@@ -92,6 +92,7 @@ export const BtnBasket = styled.button`
   fill: #292929;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #292929;

@@ -3,7 +3,14 @@ import 'swiper/css';
 import 'swiper/css/virtual';
 import 'swiper/css/autoplay';
 import { ShopBascetIcon } from "icons/shopBascetIcon";
+import { useState } from "react";
 export const SlideContent = ({ flipped, item, toggle }) => {
+const [basket, setBasket] = useState(JSON.parse(localStorage.getItem('basket')) ?? [])
+  const handleAddBasket = () => {
+    const updatedBasket = [item, ...basket];
+    setBasket(updatedBasket);
+    localStorage.setItem('basket', JSON.stringify(updatedBasket));
+  }
   if (flipped) {
     return (
       <SlideContainer flipped={flipped}>
@@ -22,7 +29,7 @@ export const SlideContent = ({ flipped, item, toggle }) => {
         <TitileProducts>{item.name}</TitileProducts>
         <WrapPrice>
           <PriceText>{item.price} грн</PriceText>
-          <BtnBasket type="button">
+          <BtnBasket type="button" onClick={handleAddBasket}>
             <ShopBascetIcon />
           </BtnBasket>
           <BtnBasket type="button" onClick={toggle}>

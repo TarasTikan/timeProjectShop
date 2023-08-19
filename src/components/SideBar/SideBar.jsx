@@ -1,10 +1,12 @@
-import { Outlet } from "react-router-dom";
-import { BtnLogo, BtnMneu, Container, Header,NavHeader, NavItem, NavList, StyledLink, TextLink } from "./SideBar.styled";
+import { Outlet, useNavigate } from "react-router-dom";
+import { BtnBasket, BtnLogo, BtnMneu, Container, Header,NavHeader, NavItem, NavList, StyledLink, TextLink } from "./SideBar.styled";
 import menuMobile from '../../img/menuMobile.png';
-import { useState } from "react";
+import {useState } from "react";
 import { Logo } from "icons/logo";
+import { ShopBascetIcon } from "icons/shopBascetIcon";
 export const SideBar = () => {
   const [menu, setMenu] = useState(false)
+  const navigate = useNavigate()
   const toggleMenu = () => {
 setMenu(!menu);
   }
@@ -35,6 +37,13 @@ setMenu(!menu);
                 <TextLink active={menu.toString()}>Про нас</TextLink>
               </NavItem>
             </NavList>
+            <BtnBasket
+              type="button"
+              active={menu.toString()}
+              onClick={() => navigate('/basket')}
+            >
+              <ShopBascetIcon />
+            </BtnBasket>
             <BtnLogo type="button" active={menu.toString()}>
               <Logo />
             </BtnLogo>

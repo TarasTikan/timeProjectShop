@@ -9,8 +9,7 @@ export const StyledSwiper = styled(Swiper)`
   margin: 0 auto;
   .swiper-slide {
     border-radius: 66px;
-    border: 2px solid #ffed4a;
-    background-color: #292929;
+    background: linear-gradient(135deg, #ffed4a 30%, #292929 60%);
     box-shadow: 9px 7px 4px 5px rgba(0, 0, 0, 0.16),
       0px 0px 5px 0px rgba(0, 0, 0, 0.25) inset;
     backdrop-filter: blur(4px);
