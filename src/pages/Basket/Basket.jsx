@@ -15,7 +15,7 @@ import { ShopBascetIcon } from 'icons/shopBascetIcon';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 export const Basket = () => {
-  const [basket, setBasket] = useState(
+  const [basket] = useState(
     JSON.parse(localStorage.getItem('basket')) ?? []
   );
    const pageVariants = {
